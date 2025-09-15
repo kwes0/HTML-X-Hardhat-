@@ -64,7 +64,7 @@ async function getBal(){
 async function withdraw(){
   if(typeof window.ethereum != "undefined"){
     const provider = new ethers.providers.Web3Provider(window.ethereum)
-    await provider.send('eth_requestAccounts', [])
+    await provider.send('eth_requestAccounts', []) //eth_requestAccounts provided by metamask
     const signer = provider.getSigner()
     const contract = new ethers.Contract(contractAddr,abi, signer)
     try{
